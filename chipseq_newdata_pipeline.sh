@@ -178,18 +178,16 @@ echo ""
 
 mkdir homer
 cd homer
-i=1
+#i=1
 #while [ $i -le $CHIP_NUMSAMPLES ]
 #do
 #   findMotifsGenome.pl $WD/$EXP/results/PEAK_${i}_peaks.narrowPeak tair10 $WD/$EXP/results/homer -size 100 -len 8
 #   ((i++))
 #done
 
-#findMotifsGenome.pl $WD/results/PEAK_i_peaks.narrowPeak tair10 $WD/results/homer -size 100 -len 8
-
-#echo ""
-#echo "Peaks analyzed with HOMER"
-#echo ""
+echo ""
+echo "Peaks analyzed with HOMER"
+echo ""
 
 #R data analysis
 cd ..
@@ -197,5 +195,9 @@ mkdir Rresults
 cd Rresults
 
 echo "The promoter length is $PROM"
-#Poner while
-#Rscript $INSDIR/ChipseqRanalysis.R $PROM $WD/results/PEAK_${i}_peaks.narrowPeak
+i=1
+while [ $i -le $CHIP_NUMSAMPLES ]
+do
+   Rscript $INSDIR/chipseq_R_analysis.R $PROM $WD/$EXP/results/PEAK_${i}_peaks.narrowPeak $WD/$EXP/results/PEAK_${i}_summits.bed
+   ((i++))
+done
