@@ -1,0 +1,13 @@
+Welcome to the parameters file. Please, complete the following specifications of the pertinent parameters.
+
+installation_directory: /home/fragorcan_2/github_repos/ChipseqNewdataPipeline_2
+working_directory: /home/fragorcan_2/temp 
+experiment_name: prr5
+number_samples: 2
+number_chip_samples: 1 
+number_input_samples: 1
+path_genome: /home/fragorcan_2/prr5/genome/chromosome1.fa
+path_annotation: /home/fragorcan_2/prr5/annotation/chromosome1.gtf
+path_chip_sample_1: /home/fragorcan_2/prr5/samples/chip/chip_prr5_chr1.fq.gz
+path_input_sample_1: /home/fragorcan_2/prr5/samples/input/input_prr5_chr1.fq.gz
+promoter_length: 1000
