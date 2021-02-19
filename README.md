@@ -12,17 +12,19 @@ To make sure the program works properly, prior to launching it, you need to make
 2. The following R packages:
 	- ChIPseeker package 
 	- TxDB of the organism of study
+	- .db file of the organism of study (org.At.tair.db for *Arabidopsis*)
 	- clusterProfiler
+	- pathview
 
 To run the program, please make sure you filla ll the test_params.txt parameters correctly and then launch both with the ./ command. Whenever you launch ChipseqNewdataPipeline without parameters, it will also ask for this information.
 
 If you have any further questions, do not hesitate to ask the developers:
 
-	- fcomanuelgordilloc@gmail.com
-	- rosojeceb@gmail.com
-	- mrtprz@gmail.com
+- fcomanuelgordilloc@gmail.com
+- rosojeceb@gmail.com
+- mrtprz@gmail.com
 
 Hope you like it!!
 
- References
+## References
 
