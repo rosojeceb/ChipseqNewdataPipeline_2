@@ -19,22 +19,30 @@ To make sure the program works properly, prior to launching it, you need to make
 
 ## The scripts
 - test_params.txt
+
 In this script, you have to fill the parameters in relation to your ChIP-seq experiment. An example is given for each parameter to help you.
  
 - chipseq_newdata_pipeline.sh
+
 This script is the one you have to launch, using the test_params.txt as the parameters provided. Yoy can launch it with the command line "bash chipseq_newdata_pipeline.sh test_params.txt" or "./chipseq_newdata_pipeline.sh test_params.txt" if you make the chipseq_newdata_pipeline.sh script executable.
 Firstly, the parameters are read and a work space is created to organise your data and the results. Then, a genome index is created. Once this is done, chip samples will be processed by the automatic launching of chip_sample_processing.sh script and input samples will be processed, as well, with the automatic launching of input_sample_processing.sh script.
 When chip and input samples are processed, peaks are obtained with macs 2 function and motifs are found with HOMER.
 Finally, R analysis is automatically launched.
 
 - chip_sample_processing.sh
+
 This script will process every chip sample is introduced in test_params.txt file.
 
 - input_sample_processing.sh
+
 This script will process every input sample is introduced in test_params.txt file.
 
 - chipseq_R_analysis.R
+
 This R script will provide you a list of target genes recognised by your transcription factor and other information related to taget gene functions (GO and KEEG)
+
+
+
 To run the program, please make sure you fill all the test_params.txt parameters correctly and then launch both with the "bash" or "./" command (in cas the script is made executable). Whenever you launch ChipseqNewdataPipeline without parameters, it will also ask for this information.
 
 If you have any further questions, do not hesitate to ask the developers:
