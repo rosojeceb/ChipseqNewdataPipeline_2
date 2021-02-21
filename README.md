@@ -39,11 +39,11 @@ This script will process every input sample is introduced in test_params.txt fil
 
 - chipseq_R_analysis.R
 
-This R script will provide you a list of target genes recognised by your transcription factor and other information related to taget gene functions (GO and KEEG)
+This R script will provide you a list of target genes recognised by your transcription factor and other information related to taget gene functions (GO and KEEG). WARNING: some graph may cause an error in the execution of this script, but you can open this script in Rstudio to obtain all the graphs without any problem.
 
 
 
-To run the program, please make sure you fill all the test_params.txt parameters correctly and then launch both with the "bash" or "./" command (in cas the script is made executable). Whenever you launch ChipseqNewdataPipeline without parameters, it will also ask for this information.
+To run the program, please make sure you fill all the test_params.txt parameters correctly and then launch both with the "bash" or "./" command (in case the script is made executable). Whenever you launch ChipseqNewdataPipeline without parameters, it will also ask for this information.
 
 If you have any further questions, do not hesitate to ask the developers:
 
