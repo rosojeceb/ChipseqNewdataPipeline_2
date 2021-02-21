@@ -21,7 +21,7 @@ CHIP_NUMSAMPLES=$6
 WD=$7
 EXP=$8
 PROM=$9
-#OUT=$8
+
 
 echo ""
 echo "Processing sample $i..."

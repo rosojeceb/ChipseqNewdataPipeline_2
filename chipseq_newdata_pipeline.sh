@@ -178,12 +178,12 @@ echo ""
 
 mkdir homer
 cd homer
-#i=1
-#while [ $i -le $CHIP_NUMSAMPLES ]
-#do
-#   findMotifsGenome.pl $WD/$EXP/results/PEAK_${i}_peaks.narrowPeak tair10 $WD/$EXP/results/homer -size 100 -len 8
-#   ((i++))
-#done
+i=1
+while [ $i -le $CHIP_NUMSAMPLES ]
+do
+   findMotifsGenome.pl $WD/$EXP/results/PEAK_${i}_peaks.narrowPeak tair10 $WD/$EXP/results/homer -size 100 -len 8
+   ((i++))
+done
 
 echo ""
 echo "Peaks analyzed with HOMER"

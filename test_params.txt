@@ -1,6 +1,6 @@
 Welcome to the parameters file. Please, complete the following specifications of the pertinent parameters.
 
-installation_directory: /home/fragorcan_2/github_repos/ChipseqNewdataPipeline_2
+installation_directory: /home/fragorcan_2/github_repos/ChipseqNewdataPipeline
 working_directory: /home/fragorcan_2/temp 
 experiment_name: prr5
 number_samples: 2

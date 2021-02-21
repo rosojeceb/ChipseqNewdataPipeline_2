@@ -95,19 +95,6 @@ barplot(eGO_CC, showCategory = 20)
 dev.off()
 
 
-jpeg("GO_BiologicalProcess_Emapplot.jpg")
-emapplot(eGO_BP, pie.scale = 0.25)
-dev.off()
-
-jpeg("GO_MolecularFunction_Emapplot.jpg")
-emapplot(eGO_MF, pie.scale = 0.25)
-dev.off()
-
-jpeg("GO_CelularComponent_Emapplot.jpg")
-emapplot(eGO_CC, pie.scale = 0.25)
-dev.off()
-
-
 #KEGG Pathway.
 
 #MAPK signal transduction pathway
