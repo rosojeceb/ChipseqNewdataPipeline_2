@@ -20,7 +20,7 @@ To make sure the program works properly, prior to launching it, you need to make
 ## The scripts
 - test_params.txt
 
-In this script, you have to fill the parameters in relation to your ChIP-seq experiment. An example is given for each parameter to help you.
+In this script, you have to fill the parameters in relation to your ChIP-seq experiment. You only need to answer the questions. An example is given for each parameter.
  
 - chipseq_newdata_pipeline.sh
 

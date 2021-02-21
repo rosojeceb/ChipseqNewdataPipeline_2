@@ -52,18 +52,10 @@ echo "Reference genome = $GENOME"
 ANNOT=$(grep path_annotation: $PARAMS | awk '{ print $2 }')
 echo "Annotation of the genome = $ANNOT"
 
-#GENOME_DOWNLOADED=$(grep genome_downloaded: $PARAMS | awk '{ print $2 }' )
-
-#ANNOT_DOWNLOADED=$(grep annot_downloaded: $PARAMS | awk '{ print $2 }' )
-
-#SCRIPTS=$(grep scripts: $PARAMS | awk '{ print $2 }' )
-
 PROM=$(grep promoter_length: $PARAMS | awk '{ print $2 }' )
 
-#OUT=$(grep output: $PARAMS | awk '{ print $2 }' )
 
 CHIP_SAMPLES=()
-
 i=0
 while [ $i -lt  $CHIP_NUMSAMPLES ]
 do
@@ -75,7 +67,6 @@ echo "Chip samples = "
 echo ${CHIP_SAMPLES[@]}
 
 INPUT_SAMPLES=()
-
 i=0
 while [ $i -lt  $INPUT_NUMSAMPLES ]
 do
@@ -158,15 +149,19 @@ done
 
 cd $WD/$EXP/results
 
-echo "Finding peaks..."
 #Finding Peaks with macs2 function
+echo "Finding peaks..."
 
 i=1
 while [ $i -le $CHIP_NUMSAMPLES ]
 do
+   mkdir peaks_$i
+   cd peaks_$i
    macs2 callpeak -t ../samples/chip/chip_sample_$i.bam -c ../samples/input/input_sample_$i.bam -f BAM --outdir . -n PEAK_$i
+   cd ..
    ((i++))
 done
+
 echo ""
 echo "All peaks found!"
 echo ""
@@ -175,13 +170,16 @@ echo ""
 ##macs2 genera todos los archivos con nombre PEAK_i (no sé qué nombre poner a los picos si no)
 
 #HOMER analysis
-
+cd $WD/$EXP/results
 mkdir homer
 cd homer
 i=1
 while [ $i -le $CHIP_NUMSAMPLES ]
 do
-   findMotifsGenome.pl $WD/$EXP/results/PEAK_${i}_peaks.narrowPeak tair10 $WD/$EXP/results/homer -size 100 -len 8
+   mkdir motifs_$i
+   cd motifs_$i
+   #findMotifsGenome.pl $WD/$EXP/results/PEAK_${i}_peaks.narrowPeak tair10 $WD/$EXP/results/homer -size 100 -len 8
+   cd ..
    ((i++))
 done
 
@@ -190,14 +188,18 @@ echo "Peaks analyzed with HOMER"
 echo ""
 
 #R data analysis
-cd ..
+cd $WD/$EXP/results
 mkdir Rresults
 cd Rresults
-
 echo "The promoter length is $PROM"
 i=1
 while [ $i -le $CHIP_NUMSAMPLES ]
 do
+   mkdir Rresults_$i
+   cd Rresults_$i
    Rscript $INSDIR/chipseq_R_analysis.R $PROM $WD/$EXP/results/PEAK_${i}_peaks.narrowPeak $WD/$EXP/results/PEAK_${i}_summits.bed
+   cd ..
    ((i++))
 done
+
+echo "ChIP analysis is done! Thank you for using our pipeline!"

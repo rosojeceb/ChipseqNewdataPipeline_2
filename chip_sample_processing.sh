@@ -18,9 +18,7 @@ INSDIR=$4
 NUM_SAMPLES=$5
 WD=$6
 EXP=$7
-#SCRIPTS=$5
 PROM=$8
-#OUT=$8
 
 echo ""
 echo "Processing sample $i..."
