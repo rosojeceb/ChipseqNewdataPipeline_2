@@ -31,11 +31,11 @@ Finally, R analysis is automatically launched.
 
 - chip_sample_processing.sh
 
-This script will process every chip sample is introduced in test_params.txt file.
+This script will process every chip sample is introduced in test_params.txt file. Please, do NOT make this script executable because it will be launched with "bash" command.
 
 - input_sample_processing.sh
 
-This script will process every input sample is introduced in test_params.txt file.
+This script will process every input sample is introduced in test_params.txt file. Please, do NOT make this script executable because it will be launched with "bash" command.
 
 - chipseq_R_analysis.R
 
