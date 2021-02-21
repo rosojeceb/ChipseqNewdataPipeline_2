@@ -28,6 +28,17 @@ Hope you like it!!
 
 ## References
 
+BOWTIE2:
+- Langmead B. et al(2018). Scaling read aligners to hundreds of threads on general-purpose processors. Bioinformatics.
+- Langmead B. et al (2012). Fast gapped-read alignment with Bowtie 2. Nature Methods. 4;9(4):357-9.
+
+FASTQC:
+- Andrews, S. (2010). FastQC:  A Quality Control Tool for High Throughput Sequence Data [Online].
+
+SAMTOOLS:
+- Li H. et al (2009) The Sequence alignment/map (SAM) format and SAMtools. Bioinformatics, 25, 2078-9.
+MACS2:
+- Zhang Y. et al (2008). Model-based Analysis of ChIP-Seq (MACS). Genome Biology, 9:R137.
 
 HOMER: 
 - Heinz S., Benner C., Spann N., Bertolino E. et al. (2010) Simple Combinations of Lineage-Determining Transcription Factors Prime cis-Regulatory Elements Required for Macrophage and B Cell Identities. Mol. Cell. May 28;38(4):576-589. 
