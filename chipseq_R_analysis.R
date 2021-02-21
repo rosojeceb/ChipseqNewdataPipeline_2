@@ -17,12 +17,12 @@ print(params[[2]])
 print("Second argument:")
 print(params[[3]])
 
-##Leemos el tamaño de promotor y el fichero de picos, el broadPeak y se guarda en una variable peaks
+##Parameters are read
 promoter_length<-as.numeric(params[[1]])
 peaks <- params[[2]]
 peaks_summits <- params[[3]]
 
-## loading packages
+## Loading packages...
 library(ChIPseeker)
 library(TxDb.Athaliana.BioMart.plantsmart28)
 library(org.At.tair.db)
@@ -30,19 +30,18 @@ library(DO.db)
 library(clusterProfiler)
 library(pathview)
 
-##Primero se carga ChIPseeker y el tx data base del organismo de estudio, en nuestro caso es Arabidopsis
-##Asociamos el txdb a una variable
 
 txdb <- TxDb.Athaliana.BioMart.plantsmart28
 
-## Se define la región que se considera promotor entorno al TSS
-promoter <- getPromoters(TxDb=txdb, upstream=promoter_length, downstream=promoter_length)
-
-##Se anotan los picos en peakAnno usando la funciÃ³n annotatePeak
 
 jpeg("covplot_peaks.jpg")
 covplot(peaks, weightCol = "V5")
 dev.off()
+
+## Promotor is defined
+promoter <- getPromoters(TxDb=txdb, upstream=promoter_length, downstream=promoter_length)
+
+##Peaks are annoted using annotatePeak function
 
 peak_annotation <- annotatePeak(peak = peaks, tssRegion = c(-promoter_length, promoter_length), TxDb = txdb, annoDb = org.At.tair)
 
@@ -54,14 +53,14 @@ jpeg("annotation_bar.jpg")
 plotAnnoBar(peak_annotation)
 dev.off()
 
-##Obtención de genes diana del factor de transcripción.
+##Target genes are obtained, considering them as genes which promotor is recognised by the transcription factor
 peak_annotation_dataframe <- as.data.frame(peak_annotation)
 
 target_genes <- peak_annotation_dataframe$geneId[peak_annotation_dataframe$annotation == "Promoter"]
 target_genes<-unique(target_genes)
 write(x = target_genes,file = "target_genes.txt")
 
-#Enriquecimiento en términos de GO.
+#GO terms enrichment
 peak_annotation_summits <- annotatePeak(peak = peaks_summits, tssRegion=c(-promoter_length, promoter_length), TxDb=txdb)
 peak_annotation_summits_dataframe <- as.data.frame(peak_annotation_summits)
 target_genes_summits <- subset(peak_annotation_summits_dataframe, annotation == "Promoter")
@@ -95,10 +94,10 @@ barplot(eGO_CC, showCategory = 20)
 dev.off()
 
 
-#KEGG Pathway.
+#KEGG Pathways.
 
-#MAPK signal transduction pathway
-keggpathway<-pathview(gene.data=target_genes, species = "ath", pathway.id = "ath04016", gene.idtype = "TAIR")
+#Photosintesis transduction pathway
+keggpathway<-pathview(gene.data=target_genes, species = "ath", pathway.id = "ath00195", gene.idtype = "TAIR")
 
 #DNA replication pathway
 keggpathway<-pathview(gene.data=target_genes, species = "ath", pathway.id = "ath03030", gene.idtype = "TAIR")

@@ -157,7 +157,7 @@ while [ $i -le $CHIP_NUMSAMPLES ]
 do
    mkdir peaks_$i
    cd peaks_$i
-   macs2 callpeak -t ../samples/chip/chip_sample_$i.bam -c ../samples/input/input_sample_$i.bam -f BAM --outdir . -n PEAK_$i
+   macs2 callpeak -t ../../samples/chip/chip_sample_$i.bam -c ../../samples/input/input_sample_$i.bam -f BAM --outdir . -n PEAK_$i
    cd ..
    ((i++))
 done
@@ -167,7 +167,6 @@ echo "All peaks found!"
 echo ""
 
 ##Con --known model se podría hacer para marcas epigenéticas (no genera modelo en la llamada a picos)
-##macs2 genera todos los archivos con nombre PEAK_i (no sé qué nombre poner a los picos si no)
 
 #HOMER analysis
 cd $WD/$EXP/results
@@ -178,7 +177,7 @@ while [ $i -le $CHIP_NUMSAMPLES ]
 do
    mkdir motifs_$i
    cd motifs_$i
-   #findMotifsGenome.pl $WD/$EXP/results/PEAK_${i}_peaks.narrowPeak tair10 $WD/$EXP/results/homer -size 100 -len 8
+   findMotifsGenome.pl $WD/$EXP/results/peaks_$i/PEAK_${i}_peaks.narrowPeak tair10 $WD/$EXP/results/homer/motifs_$i -size 100 -len 8
    cd ..
    ((i++))
 done
@@ -197,7 +196,7 @@ while [ $i -le $CHIP_NUMSAMPLES ]
 do
    mkdir Rresults_$i
    cd Rresults_$i
-   Rscript $INSDIR/chipseq_R_analysis.R $PROM $WD/$EXP/results/PEAK_${i}_peaks.narrowPeak $WD/$EXP/results/PEAK_${i}_summits.bed
+   Rscript $INSDIR/chipseq_R_analysis.R $PROM $WD/$EXP/results/peaks_$i/PEAK_${i}_peaks.narrowPeak $WD/$EXP/results/peaks_$i/PEAK_${i}_summits.bed
    cd ..
    ((i++))
 done
