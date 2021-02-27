@@ -1,47 +1,47 @@
 Welcome to the parameters file. Please, complete the following specifications of the pertinent parameters.
 
 Where is the repository installed?
-installation_directory: /home/fragorcan_2/github_repos/ChipseqNewdataPipeline_2
+installation_directory: 
 Example: /home/user/repositories/ChipseqNewdataPipeline_2
 
 Where do you want to obtain your results?
-working_directory: /home/fragorcan_2/temp 
+working_directory:  
 Example: /home/user/
 
 What is the experiment name?
-experiment_name: prr5
+experiment_name: 
 Example: transcription_factor
 
 How many samples (on the whole) are processed?
-number_samples: 2
+number_samples: 
 Example: 2
 
 How many chip samples are processed?
-number_chip_samples: 1 
+number_chip_samples:  
 Example: 1
 
 How many input samples are processed?
-number_input_samples: 1
+number_input_samples: 
 Example: 1
 
 Where is the genome of your organism located?
-path_genome: /home/fragorcan_2/prr5/chromosome1.fa
+path_genome: 
 Example: /home/user/experiment/genome/chromosome.fa 
 PLEASE make sure the genome is in FASTA format. If it isn't, you can unzip it by using the unzip command.
 
 Where is the annotation of the genome located?
-path_annotation: /home/fragorcan_2/prr5/chromosome1.gtf
+path_annotation: 
 Example: /home/user/experiment/annotation/chromosome.gtf 
 PLEASE make sure the genome is in GTF format. If it isn't, you can unzip it by using the unzip command.
 
 Where are the chip samples located?
-path_chip_sample_1: /home/fragorcan_2/prr5/chip_prr5_chr1.fq.gz
+path_chip_sample_1: 
 Example: /home/user/experiment/samples/chip/chip_1.fq.gz
 
 Where are the input samples located?
-path_input_sample_1: /home/fragorcan_2/prr5/input_prr5_chr1.fq.gz
+path_input_sample_1: 
 Example: /home/user/experiment/samples/input/input_1.fq.gz
 
 What is the average length of the promoters (pb) in your organism?
-promoter_length: 1000
+promoter_length: 
 Example: 1000
