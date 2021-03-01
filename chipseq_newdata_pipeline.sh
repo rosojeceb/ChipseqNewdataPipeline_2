@@ -18,8 +18,6 @@ then
  exit 
 fi
 
-##Aquí creo que podríamos o describir los parámetros o sugerir que el usuario vaya a params para verlo ahí
-
 ## Secondly, the relevant parameters are introduced
 
 PARAMS=$1
@@ -165,8 +163,6 @@ done
 echo ""
 echo "All peaks found!"
 echo ""
-
-##Con --known model se podría hacer para marcas epigenéticas (no genera modelo en la llamada a picos)
 
 #HOMER analysis
 cd $WD/$EXP/results
