@@ -133,14 +133,14 @@ echo "Processing individual samples..."
 i=1
 while [ $i -le $CHIP_NUMSAMPLES ]
 do
-  bash $INSDIR/chip_sample_processing.sh $WD/$EXP/samples/chip $i $CHIP_NUMSAMPLES $INSDIR $NUMSAMPLES $WD $EXP $PROM
+  bash $INSDIR/chip_sample_processing.sh $WD/$EXP/samples/chip $i 
   ((i++))
 done
 
 i=1
 while [ $i -le $INPUT_NUMSAMPLES ]
 do
-  bash $INSDIR/input_sample_processing.sh $WD/$EXP/samples/input $i $INPUT_NUMSAMPLES $INSDIR $NUMSAMPLES $CHIP_NUMSAMPLES $WD $EXP $PROM
+  bash $INSDIR/input_sample_processing.sh $WD/$EXP/samples/input $i 
   ((i++))
 done
 

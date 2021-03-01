@@ -5,7 +5,7 @@ installation_directory:
 Example: /home/user/repositories/ChipseqNewdataPipeline_2
 
 Where do you want to obtain your results?
-working_directory:  
+working_directory: 
 Example: /home/user/
 
 What is the experiment name?
@@ -17,7 +17,7 @@ number_samples:
 Example: 2
 
 How many chip samples are processed?
-number_chip_samples:  
+number_chip_samples: 
 Example: 1
 
 How many input samples are processed?
